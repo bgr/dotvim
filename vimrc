@@ -52,8 +52,8 @@ function! SmoothScroll(dir)
     endfor
 endfunction
 
-noremap <C-D> :call SmoothScroll(0)<CR>
-noremap <C-U> :call SmoothScroll(1)<CR>
+nnoremap <C-D> :call SmoothScroll(0)<CR>
+nnoremap <C-U> :call SmoothScroll(1)<CR>
 
 
 " disable folding
