@@ -2,7 +2,6 @@
 set nocompatible
 
 " Pathogen init
-filetype off
 execute pathogen#infect()
 execute pathogen#helptags()
 
@@ -15,8 +14,8 @@ syntax on
 set backspace=indent,eol,start
 
 " sane up/down
-nmap j gj
-nmap k gk
+nnoremap j gj
+nnoremap k gk
 
 set number
 set ruler
