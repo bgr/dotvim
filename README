@@ -1,6 +1,35 @@
+About
+=====
+My Vim settings and plugins
+
+
+Setting up
+==========
 git clone https://github.com/bgr/dotvim.git ~/.vim
 cd ~/.vim
 git submodule init
 git submodule update
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s pathogen/autoload autoload
+
+
+Adding new
+==========
+git submodule add https://github.com/user/plugin_name.git bundle/plugin_name
+
+
+Updating single plugin
+======================
+cd ~/.vim/bundle/plugin
+git pull origin master
+
+
+Updating all plugins
+====================
+cd ~/.vim
+git submodule foreach git pull origin master
+
+
+More info
+=========
+http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
