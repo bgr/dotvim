@@ -1,0 +1,14 @@
+diff --git a/pylibs/pylama/utils.py b/pylibs/pylama/utils.py
+index 78460ce..a3519a5 100644
+--- a/pylibs/pylama/utils.py
++++ b/pylibs/pylama/utils.py
+@@ -30,7 +30,8 @@ class PEP8Report(BaseReport):
+ 
+         self.errors.append(dict(
+             text=text,
+-            type=code,
++            #type=code,
++            type='W',  # bgr: make all pep8 errors be warnings
+             col=offset + 1,
+             lnum=line_number,
+         ))

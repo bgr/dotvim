@@ -26,6 +26,8 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set listchars=tab:→\ ,eol:¬
 set list
 
+set colorcolumn=80
+
 " use kj as Esc
 inoremap kj <Esc>
 
