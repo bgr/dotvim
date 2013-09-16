@@ -96,6 +96,13 @@ autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 let g:pymode_lint_ignore = "E201,E202,E303,W806,E221"
 
 
+" NERDTree hide by extension
+let NERDTreeIgnore = ['\.pyc$', '\.class$']
+
+" press F2 to toggle paste mode
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 
 "" color settings, assumes that terminal's ANSI color pallete is set 
 "" to values from Solarized theme
