@@ -39,6 +39,9 @@ noremap : ;
 set wildmode=longest,list
 "set wildmode=longest,list,full
 
+" set terminal titlebar
+set title
+
 " my bogus 'smooth' scrolling
 let g:smooth_scroll_lines = 7
 
