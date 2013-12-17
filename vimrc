@@ -42,6 +42,9 @@ set wildmode=longest,list
 " set terminal titlebar
 set title
 
+" always show status bar
+set laststatus=2
+
 " my bogus 'smooth' scrolling
 let g:smooth_scroll_lines = 7
 
@@ -114,3 +117,6 @@ set showmode
 "set t_Co=16
 "hi NonText ctermfg=238
 "hi SpecialKey ctermfg=238
+
+" disable Python docs preview window from coming up when pressing . key
+set completeopt-=preview
