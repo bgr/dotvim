@@ -68,10 +68,11 @@ nnoremap <C-U> :call SmoothScroll(1)<CR>
 set nofoldenable
 
 " F9 for compiling
-" alt-up/down for going through errors in QuickFix window
 noremap <F9> :make<Return>:cw<Return>
-noremap <M-UP> :cprevious<Return>
-noremap <M-DOWN> :cnext<Return>
+
+" alt-up/down for going through errors in location list window
+noremap <M-UP> :lprevious<Return>
+noremap <M-DOWN> :lnext<Return>
 
 " show QuickFix if :make finished with errors
 autocmd QuickFixCmdPost [^l]* nested cwindow
