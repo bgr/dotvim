@@ -1,14 +1,24 @@
 " use Vim settings, this must be first
 set nocompatible
 
-" Pathogen init
-execute pathogen#infect()
-execute pathogen#helptags()
+" Vundle
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'tpope/vim-pathogen.git'
+Bundle 'klen/python-mode.git'
+Bundle 'leafgarland/typescript-vim.git'
+Bundle 'elzr/vim-json.git'
+Bundle 'scrooloose/nerdtree.git'
+Bundle 'scrooloose/nerdcommenter.git'
+Bundle 'vim-scripts/swap-parameters.git'
+Bundle 'derekwyatt/vim-scala.git'
+Bundle 'peterhoeg/vim-qml'
 
 filetype plugin indent on
-filetype plugin on
-
 syntax on
+
 
 " make backspace behave in a sane manner
 set backspace=indent,eol,start

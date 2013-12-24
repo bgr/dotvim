@@ -5,31 +5,18 @@ My Vim settings and plugins
 
 Setting up
 ==========
-git clone https://github.com/bgr/dotvim.git ~/.vim
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 cd ~/.vim
-git submodule init
-git submodule update
 ln -s ~/.vim/vimrc ~/.vimrc
-ln -s pathogen/autoload autoload
+# launch Vim and run :BundleInstall
 
 
-Adding new
-==========
-git submodule add https://github.com/user/plugin_name.git bundle/plugin_name
+Vundle commands
+===============
+:BundleList          - list configured bundles
+:BundleInstall(!)    - install (update) bundles
+:BundleSearch(!) foo - search (or refresh cache first) for foo
+:BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
 
-
-Updating single plugin
-======================
-cd ~/.vim/bundle/plugin
-git pull origin master
-
-
-Updating all plugins
-====================
-cd ~/.vim
-git submodule foreach git pull origin master
-
-
-More info
-=========
-http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
+NOTE: comments after Bundle commands are not allowed
+see :h vundle for more details or https://github.com/gmarik/vundle wiki
