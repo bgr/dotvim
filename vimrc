@@ -15,6 +15,7 @@ Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'vim-scripts/swap-parameters.git'
 Bundle 'derekwyatt/vim-scala.git'
 Bundle 'peterhoeg/vim-qml'
+Bundle 'kien/ctrlp.vim'
 
 filetype plugin indent on
 syntax on
@@ -112,8 +113,10 @@ autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 " E221 - multiple spaces before operator
 let g:pymode_lint_ignore = "E201,E202,E303,W806,E221"
 
+" ignore extensions
+set wildignore+=*.swp,*.pyc,*.class
 
-" NERDTree hide by extension
+" NERDTree ignore extension
 let NERDTreeIgnore = ['\.pyc$', '\.class$']
 
 " press F2 to toggle paste mode
