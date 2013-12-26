@@ -128,8 +128,8 @@ let NERDTreeIgnore = ['\.pyc$', '\.class$']
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
-" F3 in visual mode to pipe to clipboard (requires xclip to be installed)
-vnoremap <F3> :w !xclip -selection clipboard<CR><CR>
+" yank in visual mode to pipe to clipboard (requires xclip to be installed)
+vnoremap y y:call system("xclip -selection clipboard", @")<CR>
 
 "" color settings, assumes that terminal's ANSI color pallete is set 
 "" to values from Solarized theme
