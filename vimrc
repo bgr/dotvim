@@ -81,9 +81,13 @@ set nofoldenable
 " F9 for compiling
 noremap <F9> :make<Return>:cw<Return>
 
-" alt-up/down for going through errors in location list window
-noremap <M-UP> :lprevious<Return>
-noremap <M-DOWN> :lnext<Return>
+" Alt-Up/Down for going through Location List window
+noremap <A-UP> :lprevious<Return>
+noremap <A-DOWN> :lnext<Return>
+
+" Shift-Alt-Up/Down for going through QuickFix List window
+noremap <S-A-UP> :cprevious<Return>
+noremap <S-A-DOWN> :cnext<Return>
 
 " show QuickFix if :make finished with errors
 autocmd QuickFixCmdPost [^l]* nested cwindow
@@ -119,10 +123,13 @@ set wildignore+=*.swp,*.pyc,*.class
 " NERDTree ignore extension
 let NERDTreeIgnore = ['\.pyc$', '\.class$']
 
-" press F2 to toggle paste mode
+" clipboard
+" F2 to toggle paste mode
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
+" F3 in visual mode to pipe to clipboard (requires xclip to be installed)
+vnoremap <F3> :w !xclip -selection clipboard<CR><CR>
 
 "" color settings, assumes that terminal's ANSI color pallete is set 
 "" to values from Solarized theme
