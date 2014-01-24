@@ -84,6 +84,10 @@ noremap <A-DOWN> :lnext<Return>
 noremap <S-A-UP> :cprevious<Return>
 noremap <S-A-DOWN> :cnext<Return>
 
+" Go through tabs
+noremap <PageUp> <C-PageUp>
+noremap <PageDown> <C-PageDown>
+
 " show QuickFix if :make finished with errors
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
@@ -155,9 +159,11 @@ function! Bgrepfun(search_for, ...)
     echom "Executing search command: " . cmd
 
     try
+        exe "tabnew"
         exe cmd
     catch /E480:/
         echom "No match"
+        exe "q"
     endtry
 endfunction
 
