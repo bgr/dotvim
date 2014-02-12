@@ -143,6 +143,9 @@ endfunction
 nnoremap <C-D> :call SmoothScroll(0)<CR>
 nnoremap <C-U> :call SmoothScroll(1)<CR>
 
+" allow to write to file when forgot to run vim using sudo
+cmap w!! w !sudo tee > /dev/null %
+
 
 " quicker grep - assumes current file's extension if not explicitly given
 function! Bgrepfun(search_for, ...)
