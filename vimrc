@@ -42,6 +42,7 @@ set list
 
 " show 80 character margin
 set colorcolumn=80
+hi ColorColumn ctermbg=0
 
 " disable folding
 set nofoldenable
@@ -110,6 +111,17 @@ set wildignore+=*.swp,*.pyc,*.class
 let NERDTreeIgnore = ['\.pyc$', '\.class$']
 
 
+" change default split behavior
+set splitbelow
+set splitright
+
+" navigate splits using easier
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+
 " recognize TypeScript
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 
@@ -123,6 +135,7 @@ let g:pymode_lint_ignore = "E201,E202,E303,W806,E221"
 
 " disable Python docs preview window from coming up when pressing . key
 set completeopt-=preview
+
 
 
 " my bogus 'smooth' scrolling
@@ -180,3 +193,7 @@ command! -nargs=+ Bgrep call Bgrepfun(<f-args>)
 "set t_Co=16
 "hi NonText ctermfg=238
 "hi SpecialKey ctermfg=238
+
+
+" temporary, because freezing
+let g:pymode_rope_complete_on_dot = 0
