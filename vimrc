@@ -19,6 +19,7 @@ Bundle 'vim-scripts/swap-parameters.git'
 Bundle 'derekwyatt/vim-scala.git'
 Bundle 'peterhoeg/vim-qml'
 Bundle 'kien/ctrlp.vim'
+Bundle 'jdonaldson/vaxe'
 
 filetype plugin indent on
 syntax on
