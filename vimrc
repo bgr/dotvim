@@ -134,7 +134,8 @@ autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 " E303 - too many blank lines
 " W806 - retarded pyflakes says _ is assigned but never used
 " E221 - multiple spaces before operator
-let g:pymode_lint_ignore = "E201,E202,E303,W806,E221"
+" E265 - block comment should start with '# '
+let g:pymode_lint_ignore = "E201,E202,E303,W806,E221,E265"
 
 " disable Python docs preview window from coming up when pressing . key
 set completeopt-=preview
@@ -196,7 +197,3 @@ command! -nargs=+ Bgrep call Bgrepfun(<f-args>)
 "set t_Co=16
 "hi NonText ctermfg=238
 "hi SpecialKey ctermfg=238
-
-
-" temporary, because freezing
-let g:pymode_rope_complete_on_dot = 0
