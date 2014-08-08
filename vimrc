@@ -20,6 +20,7 @@ Bundle 'derekwyatt/vim-scala.git'
 Bundle 'peterhoeg/vim-qml'
 Bundle 'kien/ctrlp.vim'
 Bundle 'jdonaldson/vaxe'
+Bundle 'godlygeek/tabular'
 
 filetype plugin indent on
 syntax on
@@ -54,6 +55,7 @@ inoremap kj <Esc>
 " switch : and ;
 noremap ; :
 noremap : ;
+
 
 " file path tab completion like in bash
 set wildmode=longest,list
@@ -94,6 +96,9 @@ noremap <PageDown> <C-PageDown>
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
+" search and replace word under cursor
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+
 
 " when saving current session with 'mksession!' 
 " remember only open files/windows/tabs, no remaps or any other stuff
@@ -124,6 +129,16 @@ nnoremap <C-H> <C-W><C-H>
 " tab for toggling previous window
 nnoremap <Tab> <C-w>p
 
+" spell check
+nnoremap <F7> :setlocal spell! spelllang=en_us<CR>
+
+" spell checking color
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=6 ctermbg=0 term=underline cterm=underline
+
+" color of matching parentheses
+highlight MatchParen ctermfg=yellow ctermbg=red
+
 
 " recognize TypeScript
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
@@ -135,9 +150,10 @@ autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 " W806 - retarded pyflakes says _ is assigned but never used
 " E221 - multiple spaces before operator
 " E265 - block comment should start with '# '
-let g:pymode_lint_ignore = "E201,E202,E303,W806,E221,E265"
+" E731 - do not assign a lambda expression, use a def
+let g:pymode_lint_ignore = "E201,E202,E303,W806,E221,E265,E731"
 
-" disable Python docs preview window from coming up when pressing . key
+" disable Python docs preview window from coming up when pressing .
 set completeopt-=preview
 
 
