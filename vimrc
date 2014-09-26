@@ -127,7 +127,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " tab for toggling previous window
-nnoremap <Tab> <C-w>p
+"nnoremap <Tab> <C-w>p
 
 " spell check
 nnoremap <F7> :setlocal spell! spelllang=en_us<CR>
@@ -151,7 +151,7 @@ autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 " E221 - multiple spaces before operator
 " E265 - block comment should start with '# '
 " E731 - do not assign a lambda expression, use a def
-let g:pymode_lint_ignore = "E201,E202,E303,W806,E221,E265,E731"
+let g:pymode_lint_ignore = "E201,E202,W806,E221,E265,E731"
 
 " disable Python docs preview window from coming up when pressing .
 set completeopt-=preview
@@ -181,7 +181,7 @@ cmap w!! w !sudo tee > /dev/null %
 
 
 " quicker grep - assumes current file's extension if not explicitly given
-function! Bgrepfun(search_for, ...)
+function! Bgrepfunc(search_for, ...)
     let file_pattern = "**"  " search all files by default
     if a:0 == 1  " extension was explicitly given, use it for searching
         let file_pattern = file_pattern . "/*." . a:1
@@ -203,7 +203,27 @@ function! Bgrepfun(search_for, ...)
     endtry
 endfunction
 
-command! -nargs=+ Bgrep call Bgrepfun(<f-args>)
+command! -nargs=+ Bgrep call Bgrepfunc(<f-args>)
+
+
+" open unstaged git files
+function! Unstagedfunc()
+    let cmd = "git status --short --untracked-files=no | awk ' { print $2 } '"
+    "let output = system(cmd)
+    let paths = split(system(cmd), "\n")
+
+    if len(paths) > 0
+        for path in paths
+            exe "tabedit " . path
+        endfor
+        echom "Opened " . len(paths) . " files"
+    else
+        echom "No unstaged files"
+    endif
+endfunction
+
+command! Unstaged call Unstagedfunc()
+
 
 
 "" color settings, assumes that terminal's ANSI color pallete is set 
