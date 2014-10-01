@@ -56,6 +56,9 @@ inoremap kj <Esc>
 noremap ; :
 noremap : ;
 
+" close tab with \q
+noremap <leader>q :tabclose<CR>
+
 
 " file path tab completion like in bash
 set wildmode=longest,list
