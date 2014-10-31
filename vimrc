@@ -21,6 +21,7 @@ Bundle 'peterhoeg/vim-qml'
 Bundle 'kien/ctrlp.vim'
 Bundle 'jdonaldson/vaxe'
 Bundle 'godlygeek/tabular'
+Bundle 'mattn/emmet-vim'
 
 filetype plugin indent on
 syntax on
@@ -228,6 +229,8 @@ endfunction
 command! Unstaged call Unstagedfunc()
 
 
+" trim whitespace (haxe only for now)
+autocmd BufWritePre *.hx :%s/\s\+$//e
 
 "" color settings, assumes that terminal's ANSI color pallete is set 
 "" to values from Solarized theme
