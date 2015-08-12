@@ -6,6 +6,7 @@ My Vim settings and plugins
 Setting up
 ==========
 
+    git clone https://github.com/bgr/dotvim.git ~/.vim
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     cd ~/.vim
     ln -s ~/.vim/vimrc ~/.vimrc
