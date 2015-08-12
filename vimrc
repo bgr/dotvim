@@ -22,6 +22,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'jdonaldson/vaxe'
 Bundle 'godlygeek/tabular'
 Bundle 'mattn/emmet-vim'
+Bundle 'tpope/vim-ragtag'
 
 filetype plugin indent on
 syntax on
@@ -104,7 +105,7 @@ autocmd QuickFixCmdPost    l* nested lwindow
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 
-" when saving current session with 'mksession!' 
+" when saving current session with 'mksession!'
 " remember only open files/windows/tabs, no remaps or any other stuff
 set sessionoptions=curdir,resize,tabpages,winsize
 
@@ -229,13 +230,26 @@ endfunction
 command! Unstaged call Unstagedfunc()
 
 
-" trim whitespace (haxe only for now)
-autocmd BufWritePre *.hx :%s/\s\+$//e
+" trim whitespace
+command! Trimwhitespace :%s/\s\+$//e
 
-"" color settings, assumes that terminal's ANSI color pallete is set 
+
+" show warning that file has been changed externally
+autocmd WinEnter * checktime
+autocmd BufWinEnter * checktime
+autocmd CursorHold * checktime
+
+"" color settings, assumes that terminal's ANSI color pallete is set
 "" to values from Solarized theme
 "colorscheme solarized
 "set background=dark
 "set t_Co=16
 "hi NonText ctermfg=238
 "hi SpecialKey ctermfg=238
+
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
+autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
+
+
+" prevents freezing due to 'Regenerate rope autoimport cache'
+let g:pymode_rope_autoimport = 0
