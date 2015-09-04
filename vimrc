@@ -244,8 +244,8 @@ autocmd WinEnter * checktime
 autocmd BufWinEnter * checktime
 autocmd CursorHold * checktime
 
-"" color settings, assumes that terminal's ANSI color pallete is set
-"" to values from Solarized theme
+"" Solarized theme settings for terminal
+"" assumes that terminal's ANSI color pallete is set to values from Solarized theme
 "colorscheme solarized
 "set background=dark
 "set t_Co=16
