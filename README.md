@@ -7,7 +7,7 @@ Setting up
 ==========
 
     git clone https://github.com/bgr/dotvim.git ~/.vim
-    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/vundle
     cd ~/.vim
     ln -s ~/.vim/vimrc ~/.vimrc
     sudo apt-get install xclip  # for yanking to system clipboard
@@ -24,3 +24,10 @@ Vundle commands
 
 NOTE: comments after Bundle commands are not allowed
 see :h vundle for more details or https://github.com/gmarik/vundle wiki
+
+
+gVim on Windows
+===============
+
+Check out the `windows` branch which has the vimrc tweaked for Windows.
+Replace the default _vimrc with the one on that branch.

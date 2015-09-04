@@ -3,11 +3,11 @@ set nocompatible
 
 " Vundle
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=$VIM/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Bundle 'VundleVim/Vundle.vim'
 
 Bundle 'tpope/vim-pathogen.git'
 Bundle 'klen/python-mode.git'
@@ -23,10 +23,12 @@ Bundle 'jdonaldson/vaxe'
 Bundle 'godlygeek/tabular'
 Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-ragtag'
+Bundle 'zeis/vim-kolor'
 
+call vundle#end()
 filetype plugin indent on
-syntax on
 
+syntax on
 
 " make backspace behave in a sane manner
 set backspace=indent,eol,start
@@ -35,13 +37,16 @@ set backspace=indent,eol,start
 nnoremap j gj
 nnoremap k gk
 
+" colorscheme kolor
+" set guifont=Consolas:h12
+
 set number
 set ruler
 
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
 " show invisible characters
-set listchars=tab:â†’\ ,eol:Â¬
+set listchars=tab:»\ ,eol:¬
 set list
 
 " show 80 character margin
