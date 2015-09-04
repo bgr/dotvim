@@ -3,8 +3,8 @@ set nocompatible
 
 " Vundle
 filetype off
-set rtp+=$VIM/bundle/Vundle.vim
-call vundle#begin()
+set rtp+=$VIM/vimfiles/bundle/Vundle.vim
+call vundle#begin("$VIM/vimfiles/bundle/")
 
 " let Vundle manage Vundle
 Bundle 'VundleVim/Vundle.vim'
@@ -15,7 +15,8 @@ Bundle 'leafgarland/typescript-vim.git'
 Bundle 'elzr/vim-json.git'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'scrooloose/nerdcommenter.git'
-Bundle 'vim-scripts/swap-parameters.git'
+" plugin below causes errors on Windows
+" Bundle 'vim-scripts/swap-parameters.git'
 Bundle 'derekwyatt/vim-scala.git'
 Bundle 'peterhoeg/vim-qml'
 Bundle 'kien/ctrlp.vim'
@@ -37,8 +38,8 @@ set backspace=indent,eol,start
 nnoremap j gj
 nnoremap k gk
 
-" colorscheme kolor
-" set guifont=Consolas:h12
+colorscheme kolor
+set guifont=Consolas:h12
 
 set number
 set ruler
