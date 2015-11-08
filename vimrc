@@ -29,6 +29,10 @@ Bundle 'zeis/vim-kolor'
 call vundle#end()
 filetype plugin indent on
 
+" force Unix line endings on Windows
+set fileformat=unix
+set fileformats=unix,dos
+
 syntax on
 
 " make backspace behave in a sane manner
