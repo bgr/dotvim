@@ -43,7 +43,7 @@ nnoremap j gj
 nnoremap k gk
 
 colorscheme kolor
-set guifont=Consolas:h12
+set guifont=Consolas:h11
 
 set number
 set ruler
