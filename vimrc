@@ -77,6 +77,9 @@ set title
 " always show status bar
 set laststatus=2
 
+" relative line numbers
+set relativenumber
+
 
 " clipboard
 " F2 to toggle paste mode
