@@ -18,7 +18,7 @@ Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'vim-scripts/swap-parameters.git'
 Bundle 'derekwyatt/vim-scala.git'
 Bundle 'peterhoeg/vim-qml'
-Bundle 'kien/ctrlp.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'jdonaldson/vaxe'
 Bundle 'godlygeek/tabular'
 Bundle 'mattn/emmet-vim'
@@ -123,8 +123,11 @@ command! -nargs=1 Underline :normal yyp<C-V>$r<args>
 nnoremap _ :Underline
 
 
-" ignore extensions
-set wildignore+=*.swp,*.pyc,*.class
+" ignored extensions/dirs
+" also used by ctrlp to exclude from list
+set wildignore+=*.swp,*.pyc,*.pyo,*.class,*.so,*/tmp/*,*\\tmp\\*,*.zip,*.exe
+set wildignore+=*/node_modules/*,*\\node_modules\\*
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*\\.git\\*,*\\.hg\\*,*\\.svn\\*
 
 " NERDTree ignore extension
 let NERDTreeIgnore = ['\.pyc$', '\.class$']
