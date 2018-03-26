@@ -12,4 +12,7 @@ let $PATH.=";C:\\Python32"
 autocmd GUIEnter * set vb t_vb=
 set noerrorbells
 
+" resize window
+set lines=44 columns=120
+
 source $VIM/vimfiles/vimrc
